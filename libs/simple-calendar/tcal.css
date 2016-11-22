@@ -1,0 +1,110 @@
+/*
+	Stylesheet for Tigra Calendar v5.0
+	Product is Public Domain (Free for any kind of applicaiton, customization and derivative works are allowed) 
+	URL: http://www.softcomplex.com/products/tigra_calendar/
+
+	- all image paths are relative to path of stylesheet
+	- the styles below can be moved into the document or in existing stylesheet
+
+*/
+
+/* input box in default state */ 
+.tcalInput {
+	padding-right: 20px;
+	cursor: pointer;
+	position: relative;
+}
+
+/* additional properties for input boxe in activated state, above still applies unless in conflict */
+.tcalActive {
+	background-image: url('img/no_cal.gif');
+}
+/* container of calendar's pop-up */
+#tcal {
+	position: fixed;
+	visibility: hidden;
+	z-index: 1100;
+	width: 300px;
+	background-color: white;
+	margin-top: 20px;
+	border: 0;	
+	border-radius: 6px;
+}
+
+.tcal-fix {
+	position: fixed;
+
+}
+
+/* table containing navigation and current month */
+#tcalControls {
+	border-collapse: collapse;
+	border: 0;
+	width: 100%;
+	height: 48px;
+	background-color: #09c;
+	border-radius: 6px 6px 0 0;
+}
+#tcalControls td {
+	border-collapse: collapse;
+	border: 0;
+	padding: 0;
+	width: 16px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+#tcalControls th {
+	border-collapse: collapse;
+	border: 0;
+	padding: 0;
+	color: white;
+	line-height: 25px;
+	font-size: 16px;
+	text-align: center;
+	font-weight: 700;
+	white-space: nowrap;
+}
+#tcalPrevYear { background-image: url('img/prev_year.gif'); }
+#tcalPrevMonth { background-image: url('img/prev_mon.png'); }
+#tcalNextMonth { background-image: url('img/next_mon.png'); }
+#tcalNextYear { background-image: url('img/next_year.gif'); }
+
+/* table containing week days header and calendar grid */
+#tcalGrid {
+	border-collapse: collapse;
+	border: 0;
+	border-radius: 0 0 6px 6px;
+	width: 100%;
+	background-color: #f1f2f3;
+	padding: 30px;
+}
+#tcalGrid tr {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+#tcalGrid th {
+	border: 0;
+	border-collapse: collapse;
+	padding: 3px 0;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: #f1f2f3;
+	color: #383737;
+}
+#tcalGrid td {
+	border: 0;
+	border-collapse: collapse;
+	border-radius: 6px;
+	padding: 2px 0;
+	text-align: center;
+	width: 14%;
+	font-size: 14px;
+	font-weight: 700;
+	cursor: pointer;
+}		
+#tcalGrid td.tcalOtherMonth { color: silver; }
+#tcalGrid td.tcalWeekend { background-color: #f1f2f3; }
+#tcalGrid td.tcalToday { border: 0; background-color: #09c;  border-radius: 6px; color: white;}
+#tcalGrid td.tcalSelected { border: 1px solid #09c; border-radius: 6px !important;}		
