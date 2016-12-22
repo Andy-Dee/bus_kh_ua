@@ -166,6 +166,8 @@ $(document).ready(function() {
     });
     $('.street').select2({
     });
+    $('.as').select2({
+    });
 });
 
 /* Laptop top menu */

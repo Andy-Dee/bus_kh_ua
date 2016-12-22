@@ -75,7 +75,6 @@ ul li {
 
 .top-menu {
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   flex-grow: 2;
@@ -232,14 +231,16 @@ ul li {
 .bus-search {
   display: flex;
   justify-content: space-between;
+  flex-flow: row wrap;
   align-items: center;
-  width: 940px; }
+  width: 940px;
+  height: 65px; }
 
 .stations {
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  height: 50px; }
 
 .reverse {
   width: 24px;
@@ -439,6 +440,9 @@ input[type="text"], input[type="number"], input[type="email"] {
 
 .select2-search--dropdown {
   display: none; }
+
+.select2-dropdown {
+  width: 100%; }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background-color: #09c !important; }
@@ -756,8 +760,7 @@ input[type="text"], input[type="number"], input[type="email"] {
     margin-bottom: 40px; }
 
 .footer-top-wrap {
-  background-color: #09c;
-  margin-top: 68px; }
+  background-color: #09c; }
   .footer-top-wrap .footer-top {
     height: 106px;
     display: flex;
@@ -1523,8 +1526,7 @@ input[type="text"], input[type="number"], input[type="email"] {
 
 .map {
   padding-left: 0;
-  padding-right: 0;
-  height: 450px; }
+  padding-right: 0; }
 
 .as-search-wrap {
   position: absolute;
@@ -1558,8 +1560,7 @@ input[type="text"], input[type="number"], input[type="email"] {
 
 .as-list-wrap {
   background-color: #f1f2f3;
-  padding: 60px 0 30px;
-  margin-top: 50px; }
+  padding: 60px 0 30px; }
 
 .as-list ul {
   max-height: 390px;
@@ -1613,6 +1614,8 @@ input[type="text"], input[type="number"], input[type="email"] {
     .inner-body-as .as-inner-body .as-content {
       flex-grow: 2;
       max-width: 700px; }
+      .inner-body-as .as-inner-body .as-content .select-as {
+        display: none; }
       .inner-body-as .as-inner-body .as-content h1 {
         color: #09c;
         font-size: 32px;
@@ -1709,6 +1712,8 @@ input[type="text"], input[type="number"], input[type="email"] {
           .inner-body-as .as-inner-body .as-content .trip-table-as tbody tr td:nth-child(4) {
             padding-left: 0;
             text-align: center; }
+      .inner-body-as .as-inner-body .as-content .trip-table-as-mobile {
+        display: none; }
 
 /* Bus List */
 .inner-body-bus-list {
@@ -1752,10 +1757,10 @@ input[type="text"], input[type="number"], input[type="email"] {
   .trip-params .trip-params-inner {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
     align-items: center; }
     .trip-params .trip-params-inner label {
-      margin-right: 40px; }
+      margin-right: 20px;
+      max-width: 120px; }
     .trip-params .trip-params-inner .trip-from {
       width: 235px; }
     .trip-params .trip-params-inner .trip-where {
@@ -1847,6 +1852,9 @@ input[type="text"], input[type="number"], input[type="email"] {
       padding-left: 0;
       text-align: center;
       vertical-align: middle; }
+
+.trip-table-bus-mobile {
+  display: none; }
 
 .pagination {
   margin: 30px 0; }

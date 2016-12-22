@@ -115,7 +115,7 @@
   <div class="container-fluid menu-lining"></div>
   <!-- AS Inner -->
   <div class="container-fluid inner-body-as">
-    <div class="container">
+    <div class="container inner-body-as-inner">
       <h1>автостанции</h1>
       <div class="as-inner-body">        
         <div class="as-list-inner">
@@ -152,6 +152,41 @@
           </ul>
         </div>
         <div class="as-content">
+          <div class="select-as">
+            <form action="">
+              <select name="as" id="as" class="as">
+                <option>АС-1</option>
+                <option>АС-2</option>
+                <option>АС-3</option>
+                <option>АС-4</option>
+                <option>АС-5</option>
+                <option>Балаклейская АС</option>
+                <option>Близнюковская АС</option>
+                <option>Богодуховская АС</option>
+                <option>Боровская АС</option>
+                <option>Великобурлукская АС</option>
+                <option>Валковская АС</option>
+                <option>Волчанская АС</option>
+                <option>Двуречанская АС</option>
+                <option>Зачепиловская АС</option>
+                <option>Змиевская АС</option>
+                <option>Золочевская АС</option>
+                <option>Изюмская АС</option>
+                <option>Кегичевская АС</option>
+                <option>Ковшаровская АС</option>
+                <option>Красноградская АС</option>
+                <option>Краснокутская АС</option>
+                <option>Купянская АС</option>
+                <option>Лозовская АС</option>
+                <option>Нововодолажская АС</option>
+                <option>Первомайская АС</option>
+                <option>Сахновщинская АС</option>
+                <option>Слобожанская АС</option>
+                <option>Чугуевская АС</option>
+                <option>Шевченковская АС</option>
+              </select>
+            </form>
+          </div>
           <h1>Богодуховская АС</h1>
           <div class="as-spec-wrap">
             <div class="as-spec-txt">
@@ -183,6 +218,7 @@
               <button class="btn btn-blue search-trip">Найти</button>
             </form>
           </div>
+          <!-- For Desktop and Laptop -->
           <table class="trip-table-as">
             <thead>
               <tr>
@@ -217,6 +253,47 @@
                 <td>20:50</td>
                 <td><button class="btn btn-green trip-btn">от 320 грн</button></td>
               </tr>
+            </tbody>
+          </table>
+          <!-- For Mobile -->
+          <table class="container trip-table-as-mobile">
+            <thead>
+              <tr>
+                <th><a href="#">Рейс</a></th>
+                <th><a href="#">Стоимость</a></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <p><span>Харьков</span> &rarr; <span>Одесса</span></p>                  
+                </td>
+              </tr>
+              <tr>
+                <td><p class="trip-info">Отправление: <span>17:10</span></p></td> 
+                <td><p class="trip-info">Прибытие: <span>20:50</span></p></td>                
+              </tr>              
+              <tr>          
+                <td colspan="2"><button class="btn btn-green trip-btn">от 550 грн</button></td>
+              </tr>       
+            
+            </tbody>
+          </table>
+          <table class="container trip-table-as-mobile">            
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <p><span>Харьков</span> &rarr; <span>Одесса</span></p>                  
+                </td>
+              </tr>
+              <tr>
+                <td><p class="trip-info">Отправление: <span>17:10</span></p></td> 
+                <td><p class="trip-info">Прибытие: <span>20:50</span></p></td>                
+              </tr>              
+              <tr>          
+                <td colspan="2"><button class="btn btn-green trip-btn">от 550 грн</button></td>
+              </tr>       
+            
             </tbody>
           </table>
         </div>           

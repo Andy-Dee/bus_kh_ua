@@ -1,4 +1,4 @@
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .container-fluid {
     min-width: 750px; }
 
@@ -29,11 +29,11 @@
     display: none; }
 
   .third-row {
-    top: 318%;
+    top: 270%;
     margin-left: -360px; }
 
   .third-row-inner {
-    top: 318%;
+    top: 95px;
     margin-left: -360px; }
 
   .bus-search {
@@ -41,7 +41,10 @@
     width: 720px; }
 
   .stations {
-    flex-flow: row nowrap; }
+    min-width: 720px; }
+
+  .station-item {
+    width: 337px; }
 
   .station {
     width: 337px; }
@@ -57,6 +60,11 @@
   .date-add {
     width: 230px;
     background-position: 200px center; }
+
+  .passenger-wrap {
+    width: 230px; }
+    .passenger-wrap .select2-container .select2-selection--single {
+      width: 230px; }
 
   .passenger {
     width: 230px; }
@@ -188,9 +196,6 @@
     width: 130px; }
 
   /* Inners */
-  .third-row-inner {
-    top: 130px; }
-
   /* Search */
   .search-item tbody tr td {
     padding: 20px 15px; }
@@ -235,7 +240,110 @@
       margin-bottom: 20px; }
 
   .form-accept-wrap .form-accept {
-    padding-left: 80px; } }
+    padding-left: 80px; }
+
+  /* Bus list */
+  .type-trip .type-trip-inner {
+    height: 160px;
+    padding: 30px 0 35px;
+    flex-flow: row wrap; }
+    .type-trip .type-trip-inner .type-trip-item-1 {
+      width: 100%;
+      margin-bottom: 10px; }
+      .type-trip .type-trip-inner .type-trip-item-1 h1 {
+        text-align: center; }
+    .type-trip .type-trip-inner .type-trip-item-2 {
+      margin-right: 20px; }
+    .type-trip .type-trip-inner .btn-yellow {
+      width: 350px;
+      margin: 0; }
+    .type-trip .type-trip-inner .btn-blue {
+      width: 350px;
+      margin: 0; }
+
+  .trip-params {
+    padding-bottom: 10px; }
+    .trip-params .trip-params-inner {
+      flex-flow: row wrap; }
+      .trip-params .trip-params-inner .trip-from {
+        width: 350px; }
+      .trip-params .trip-params-inner .trip-where {
+        width: 350px; }
+    .trip-params .trip-params-inner-1 {
+      margin-right: 20px; }
+
+  .trip-search-wrap form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .trip-search-wrap input[type="text"] {
+    width: 565px; }
+
+  .trip-table-bus tbody tr td {
+    max-width: 20%;
+    padding: 20px 0px 20px 25px; }
+    .trip-table-bus tbody tr td .trip-btn {
+      margin-left: 15px; }
+  .trip-table-bus tbody tr td:nth-child(1), .trip-table-bus tbody tr td:nth-child(4) {
+    min-width: 0; }
+  .trip-table-bus tbody tr td:nth-child(5) {
+    padding: 20px 20px 20px 10px; }
+
+  .map-bus-list {
+    padding-left: 0;
+    padding-right: 0; }
+
+  /* AS */
+  .inner-body-as .as-inner-body .as-content {
+    max-width: 480px; }
+    .inner-body-as .as-inner-body .as-content .as-spec-wrap {
+      flex-flow: column wrap;
+      margin-bottom: 40px; }
+      .inner-body-as .as-inner-body .as-content .as-spec-wrap .as-spec-img img {
+        margin-left: 30px; }
+    .inner-body-as .as-inner-body .as-content .trip-search-wrap form input[type="text"] {
+      width: 315px; }
+    .inner-body-as .as-inner-body .as-content .trip-search-wrap form .search-trip {
+      padding-left: 40px;
+      background-position: 20px center; }
+    .inner-body-as .as-inner-body .as-content .trip-table-as thead tr th {
+      background-position: 10px center; }
+      .inner-body-as .as-inner-body .as-content .trip-table-as thead tr th a {
+        padding-left: 35px; }
+    .inner-body-as .as-inner-body .as-content .trip-table-as tbody tr td {
+      padding-left: 30px; }
+      .inner-body-as .as-inner-body .as-content .trip-table-as tbody tr td .trip-btn {
+        width: 100px;
+        font-size: 14px; }
+    .inner-body-as .as-inner-body .as-content .trip-table-as tbody tr td:nth-child(1) {
+      background-position: 6px center;
+      padding-left: 35px;
+      min-width: 160px; }
+    .inner-body-as .as-inner-body .as-content .trip-table-as tbody tr td:nth-child(4) {
+      padding-left: 5px;
+      padding-right: 5px; }
+
+  /* AS List */
+  .as-search-wrap {
+    top: 170px;
+    left: 0;
+    margin-left: 15px;
+    flex-flow: row nowrap; }
+    .as-search-wrap input[type="text"] {
+      width: 560px;
+      margin-right: 0; }
+
+  .as-list ul {
+    max-width: 720px; }
+    .as-list ul li {
+      width: 240px;
+      margin-right: 0; } }
+@media only screen and (max-width: 650px) {
+  .third-row {
+    margin-left: -297px; } }
+@media only screen and (max-width: 420px) {
+  .third-row {
+    margin-left: -185px; } }
 @media only screen and (max-width: 375px) {
   body {
     overflow-x: hidden; }
@@ -306,16 +414,16 @@
     padding: 15px 0px 15px 0px; }
 
   .third-row {
-    height: auto;
-    top: 87px;
-    left: 0;
+    height: 465px;
+    top: -112px;
+    left: 5px;
     margin-left: 0;
     padding: 5px; }
 
   .third-row-inner {
-    height: auto;
-    top: 87px;
-    left: 0;
+    height: 465px;
+    top: -112px;
+    left: 5px;
     margin-left: 0;
     padding: 5px; }
 
@@ -324,8 +432,12 @@
     padding: 6px; }
 
   .stations {
+    min-width: 320px;
     flex-flow: column nowrap;
     height: 115px; }
+
+  .station-item {
+    width: 320px; }
 
   .station {
     width: 320px;
@@ -339,6 +451,11 @@
 
   .date-add {
     background-position: 122px center; }
+
+  .passenger-wrap {
+    width: 155px; }
+    .passenger-wrap .select2-container .select2-selection--single {
+      width: 155px; }
 
   .passenger {
     width: 155px; }
@@ -653,7 +770,235 @@
     .order-body-step-four .u-can-pay .pays {
       text-align: center; }
       .order-body-step-four .u-can-pay .pays a img {
-        margin: 10px 20px; } }
+        margin: 10px 20px; }
+
+  /* Bus list */
+  .inner-body-bus-list {
+    padding-left: 0;
+    padding-right: 0; }
+
+  .type-trip {
+    padding-left: 0;
+    padding-right: 0; }
+    .type-trip .type-trip-inner {
+      height: 225px; }
+      .type-trip .type-trip-inner .btn-yellow {
+        margin-bottom: 15px; }
+
+  .trip-params {
+    flex-flow: row wrap;
+    height: 240px; }
+    .trip-params .trip-params-inner .trip-from, .trip-params .trip-params-inner .trip-where {
+      width: 320px; }
+    .trip-params .trip-params-inner label {
+      max-width: 100%; }
+
+  .trip-search-wrap {
+    margin-top: 25px;
+    margin-bottom: 25px; }
+    .trip-search-wrap form {
+      flex-flow: row wrap;
+      justify-content: center; }
+    .trip-search-wrap input[type="text"] {
+      width: 320px;
+      margin-right: 0;
+      margin-bottom: 20px; }
+    .trip-search-wrap .search-trip {
+      width: 320px; }
+
+  .trip-table-bus {
+    display: none; }
+
+  .trip-table-bus-mobile {
+    display: table;
+    width: 100%;
+    max-width: 320px;
+    border-top: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    margin-bottom: -1px; }
+    .trip-table-bus-mobile thead {
+      max-width: 320px; }
+      .trip-table-bus-mobile thead tr {
+        background-color: #333; }
+        .trip-table-bus-mobile thead tr th {
+          background-image: url("../img/trip-select.png");
+          background-position: 24px center;
+          background-repeat: no-repeat;
+          height: 40px; }
+          .trip-table-bus-mobile thead tr th a {
+            color: white;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 24px;
+            padding-left: 45px; }
+        .trip-table-bus-mobile thead tr th:nth-child(2) {
+          background-position: 84px center; }
+          .trip-table-bus-mobile thead tr th:nth-child(2) a {
+            padding-left: 105px; }
+    .trip-table-bus-mobile tbody tr {
+      background-color: #fff; }
+      .trip-table-bus-mobile tbody tr td {
+        color: black;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        padding: 10px 10px 10px 10px;
+        text-align: left;
+        vertical-align: top; }
+        .trip-table-bus-mobile tbody tr td .trip-btn {
+          width: 280px;
+          height: 50px;
+          font-size: 16px; }
+        .trip-table-bus-mobile tbody tr td .trip-number {
+          margin-top: 10px;
+          color: #666;
+          font-size: 14px;
+          line-height: 17px; }
+          .trip-table-bus-mobile tbody tr td .trip-number span {
+            color: black;
+            font-size: 16px; }
+        .trip-table-bus-mobile tbody tr td .trip-note {
+          color: #282f39;
+          font-size: 13px;
+          line-height: 15px; }
+        .trip-table-bus-mobile tbody tr td .trip-info {
+          margin-top: 10px;
+          font-size: 13px;
+          line-height: 15px;
+          color: #666; }
+          .trip-table-bus-mobile tbody tr td .trip-info span {
+            color: black; }
+      .trip-table-bus-mobile tbody tr td:nth-child(5) {
+        padding-left: 0;
+        text-align: center;
+        vertical-align: middle; }
+    .trip-table-bus-mobile tbody tr:nth-child(1) td:nth-child(1) {
+      padding-left: 55px;
+      background-image: url("../img/bus.png");
+      background-position: 20px 23px;
+      background-repeat: no-repeat; }
+    .trip-table-bus-mobile tbody tr:nth-child(2) td:nth-child(1), .trip-table-bus-mobile tbody tr:nth-child(3) td:nth-child(1) {
+      padding: 10px 10px 10px 50px; }
+    .trip-table-bus-mobile tbody tr:nth-child(4) {
+      border-bottom: 1px solid #e5e5e5; }
+      .trip-table-bus-mobile tbody tr:nth-child(4) td {
+        padding: 10px 20px 20px 20px; }
+
+  /* AS */
+  .inner-body-as {
+    padding: 30px 0; }
+    .inner-body-as .inner-body-as-inner {
+      margin-left: 0;
+      margin-right: 0; }
+      .inner-body-as .inner-body-as-inner h1 {
+        margin-top: 0px;
+        margin-bottom: 30px; }
+    .inner-body-as .as-inner-body .as-list-inner {
+      display: none; }
+    .inner-body-as .as-inner-body .as-content {
+      max-width: 330px;
+      padding-left: 15px; }
+      .inner-body-as .as-inner-body .as-content .select-as {
+        display: block;
+        margin-bottom: 30px; }
+        .inner-body-as .as-inner-body .as-content .select-as .as {
+          border: 1px solid #e5e5e5;
+          padding: 10px;
+          color: #666;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          width: 310px;
+          height: 50px; }
+      .inner-body-as .as-inner-body .as-content h1 {
+        line-height: 36px; }
+      .inner-body-as .as-inner-body .as-content .as-spec-wrap .as-spec-img img {
+        margin-left: 10px; }
+      .inner-body-as .as-inner-body .as-content .trip-search-wrap form {
+        flex-flow: row wrap; }
+        .inner-body-as .as-inner-body .as-content .trip-search-wrap form input[type="text"], .inner-body-as .as-inner-body .as-content .trip-search-wrap form .search-trip {
+          width: 310px; }
+        .inner-body-as .as-inner-body .as-content .trip-search-wrap form input[type="text"] {
+          margin-right: 0;
+          background-position: 105px center; }
+      .inner-body-as .as-inner-body .as-content .trip-table-as {
+        display: none; }
+      .inner-body-as .as-inner-body .as-content .trip-table-as-mobile {
+        display: table;
+        width: 100%;
+        max-width: 320px;
+        border-top: 1px solid #e5e5e5;
+        border-left: 1px solid #e5e5e5;
+        border-right: 1px solid #e5e5e5;
+        margin-top: -1px; }
+        .inner-body-as .as-inner-body .as-content .trip-table-as-mobile thead {
+          max-width: 320px; }
+          .inner-body-as .as-inner-body .as-content .trip-table-as-mobile thead tr {
+            background-color: #333; }
+            .inner-body-as .as-inner-body .as-content .trip-table-as-mobile thead tr th {
+              background-image: url("../img/trip-select.png");
+              background-position: 24px center;
+              background-repeat: no-repeat;
+              height: 40px; }
+              .inner-body-as .as-inner-body .as-content .trip-table-as-mobile thead tr th a {
+                color: white;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 24px;
+                padding-left: 45px; }
+        .inner-body-as .as-inner-body .as-content .trip-table-as-mobile tbody tr {
+          background-color: #fff; }
+          .inner-body-as .as-inner-body .as-content .trip-table-as-mobile tbody tr td {
+            color: black;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+            padding: 20px 0px 10px 22px;
+            text-align: left;
+            vertical-align: top; }
+            .inner-body-as .as-inner-body .as-content .trip-table-as-mobile tbody tr td .trip-btn {
+              width: 270px;
+              height: 50px;
+              font-size: 16px; }
+            .inner-body-as .as-inner-body .as-content .trip-table-as-mobile tbody tr td .trip-info {
+              font-size: 13px;
+              line-height: 15px;
+              color: #666; }
+              .inner-body-as .as-inner-body .as-content .trip-table-as-mobile tbody tr td .trip-info span {
+                color: black;
+                font-size: 16px; }
+          .inner-body-as .as-inner-body .as-content .trip-table-as-mobile tbody tr td:nth-child(5) {
+            padding-left: 0;
+            text-align: center;
+            vertical-align: middle; }
+        .inner-body-as .as-inner-body .as-content .trip-table-as-mobile tbody tr:nth-child(1) td:nth-child(1) {
+          padding-left: 55px;
+          background-image: url("../img/bus.png");
+          background-position: 20px 23px;
+          background-repeat: no-repeat; }
+        .inner-body-as .as-inner-body .as-content .trip-table-as-mobile tbody tr:nth-child(3) {
+          border-bottom: 1px solid #e5e5e5; }
+
+  /* AS List */
+  .as-search-wrap input[type="text"], .as-search-wrap .search-as {
+    width: 310px; }
+  .as-search-wrap input[type="text"] {
+    margin-bottom: 30px; }
+
+  .inner-body-as-list {
+    padding-left: 0;
+    padding-right: 0; }
+
+  .as-list-wrap {
+    padding: 20px 0 20px; }
+
+  .as-list ul {
+    max-width: 320px;
+    max-height: 100%; }
+    .as-list ul li {
+      width: 320px;
+      margin-right: 0; } }
 @media only screen and (max-width: 320px) {
   body {
     overflow-x: visible; }

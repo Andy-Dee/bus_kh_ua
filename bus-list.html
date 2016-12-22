@@ -117,21 +117,21 @@
   <div class="container-fluid inner-body-bus-list">
     <div class="container-fluid type-trip">
       <div class="container type-trip-inner">
-        <div class="type-trip-item">
+        <div class="type-trip-item type-trip-item-1">
           <h1>Расписание автобусов</h1>
         </div>
-        <div class="type-trip-item">
+        <div class="type-trip-item type-trip-item-2">
           <button class="btn btn-yellow">Внутренние рейсы</button>
         </div>
-        <div class="type-trip-item">
+        <div class="type-trip-item type-trip-item-3">
           <button class="btn btn-blue">Международные рейсы</button>
         </div>
       </div>
     </div>
     <div class="container">
       <form class="trip-params">          
-        <div class="trip-params-inner">
-          <label for="trip-from">Выбрать станцию<br> отправления:</label>
+        <div class="trip-params-inner trip-params-inner-1">
+          <label for="trip-from">Выбрать станцию отправления:</label>
           <select class="trip-params-item trip-from" name="trip-from">
             <option>Великобурлукская АС</option>
             <option>Валковская АС</option>
@@ -139,7 +139,7 @@
           </select>
         </div>
         <div class="trip-params-inner">
-          <label for="trip-where">Выбрать<br> направление:</label>
+          <label for="trip-where">Выбрать направление:</label>
           <select class="trip-params-item trip-where" name="trip-where">
             <option>КИЇВСЬКИЙ НАПРЯМОК ч-з Полтаву</option>
             <option>ДНIПРОВСЬКИЙ НАПРЯМОК ч-з Красноград</option>
@@ -158,6 +158,7 @@
         <button class="btn btn-blue search-trip">Найти</button>
       </form>
     </div>
+    <!-- For Desktop and Laptop -->
     <table class="container trip-table-bus">
       <thead>
         <tr>
@@ -165,7 +166,7 @@
           <th><a href="#">Отправление</a></th>
           <th><a href="#">Прибытие</a></th>
           <th><a href="#">Информация</a></th>
-          <th><a href="#">Цена</a></th>
+          <th><a href="#">Стоимость</a></th>
         </tr>
       </thead>
       <tbody>
@@ -277,6 +278,73 @@
           </td>
           <td><button class="btn btn-green trip-btn">от 550 грн</button></td>
         </tr>
+       
+      </tbody>
+    </table>
+    <!-- For Mobile -->
+    <table class="container trip-table-bus-mobile">
+      <thead>
+        <tr>
+          <th><a href="#">Прибытие</a></th>
+          <th><a href="#">Стоимость</a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <p><span>Харьков</span> &rarr; <span>Одесса</span></p>
+            <p class="trip-number">Номер рейса: <span>4565</span></p>
+          </td>
+        </tr>
+        <tr>
+          <td>17:10</td>
+          <td>
+            <p class="trip-note">
+              Вокзал АС <br>справа от шлагбаума на выезде
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>20:50</td>
+          <td>
+            <p class="trip-note">
+              "МакДональдс",<br> площадь Привокзальна 1А
+            </p>
+          </td>
+        </tr>
+        <tr>          
+          <td colspan="2"><button class="btn btn-green trip-btn">от 550 грн</button></td>
+        </tr>       
+       
+      </tbody>
+    </table>
+    <table class="container trip-table-bus-mobile">     
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <p><span>Харьков</span> &rarr; <span>Одесса</span></p>
+            <p class="trip-number">Номер рейса: <span>4565</span></p>
+          </td>
+        </tr>
+        <tr>
+          <td>17:10</td>
+          <td>
+            <p class="trip-note">
+              Вокзал АС <br>справа от шлагбаума на выезде
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>20:50</td>
+          <td>
+            <p class="trip-note">
+              "МакДональдс",<br> площадь Привокзальна 1А
+            </p>
+          </td>
+        </tr>
+        <tr>          
+          <td colspan="2"><button class="btn btn-green trip-btn">от 550 грн</button></td>
+        </tr>       
        
       </tbody>
     </table>
