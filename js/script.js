@@ -218,6 +218,15 @@ $(document).ready(function() {
   });
 });
 
+/* Search-details collapse style */
+$(document).ready(function(){
+    $('.collapse').on('shown.bs.collapse', function(){
+        $(this).parent().find(".search-details-btn").removeClass("search-details-btn").addClass("search-details-btn-hide");
+    }).on('hidden.bs.collapse', function(){
+        $(this).parent().find(".search-details-btn-hide").removeClass("search-details-btn-hide").addClass("search-details-btn");
+    });
+});
+
 
 
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Main page</title>
     <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="libs/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
           <a href="tel:+380577326502">+38 (057) 732-65-02</a>
         </div>
         <div class="cabinet">
-          <a href="#">Личный кабинет</a>
+          <a href="#" data-toggle="modal" data-target="#Enter">Личный кабинет</a>
         </div>
         <div class="language">
           <form>
@@ -52,7 +52,7 @@
             </select>
           </form>
         </div>
-        <button id="sandwich-laptop" class="sandwich-laptop hidden-md hidden-lg" type="button"></button>
+        <a id="sandwich-laptop" class="sandwich-laptop hidden-md hidden-lg" type="button"></a>
       </div>
     </div>
     <div class="container-fluid second-row-wrap">
@@ -91,7 +91,7 @@
               </select>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group date-wrap">
             <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
               <input class="date-add" type="text" value="" placeholder="Дата">
               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -103,7 +103,7 @@
                 <option>2 пассажира</option>
               </select>
           </div>
-          <div class="form-group">
+          <div class="form-group search-wrap">
             <button class="btn btn-green search">Найти</button>
           </div>
         </form>
@@ -420,14 +420,50 @@
       </div>
     </div>
   </footer>
+
+  <!-- Modal -->
+  <div id="Enter" class="modal fade enter" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content enter-content">
+      <div class="modal-header enter-header">
+        <button type="button" class="close enter-close" data-dismiss="modal"></button>
+        <h4 class="modal-title enter-title">Личный кабинет</h4>
+      </div>
+      <div class="modal-body enter-body">
+        <form action="modal">
+          <div class="form-group">
+            <input type="email" name="email" id="email" placeholder="E-mail">
+          </div>
+          <div class="form-group">
+            <input type="text" name="pass" id="pass" placeholder="Пароль">
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="remember" id="" class="remember">
+            <label for="remember"><span></span>Запомнить меня</label>
+          </div>
+          <button class="btn btn-blue search-trip enter-btn">&nbsp;Войти</button>          
+        </form>
+        <div class="other-modals-link">
+          <a href="#">Забыли пароль?</a>
+          <a href="#">Регистрация</a>
+        </div>
+        <div class="socials">
+          <button class="btn btn-facebook">Login with Facebook</button>
+          <button class="btn btn-google">Login with G+</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
   
-  <!-- Google Maps API -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgea0ua2oQ47l15onoEM2QnkO_OeonZjg&callback=initMap""></script>        
+  <!-- Google Maps API -->      
   <script type="text/javascript">
       // When the window has finished loading create our google map below
-      google.maps.event.addDomListener(window, 'load', init);
+      google.maps.event.addDomListener(window, 'load', initMap);
   
-      function init() {
+      function initMap() {
           // Basic options for a simple Google Map
           // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
           var mapOptions = {
@@ -520,7 +556,8 @@
           });               
           
       }
-  </script> 
+  </script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgea0ua2oQ47l15onoEM2QnkO_OeonZjg&callback=initMap""></script>    
     
 
     

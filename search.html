@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,491 +12,643 @@
     <link href="css/fonts.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/media.css" rel="stylesheet">
-
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="libs/bootstrap/js/bootstrap.min.js"></script>    
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="libs/datetimepicker/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
     <script src="libs/datetimepicker/js/locales/bootstrap-datetimepicker.ru.js" type="text/javascript"></script>
-    <script src="libs/select2/js/select2.min.js" type="text/javascript"></script>    
+    <script src="libs/select2/js/select2.min.js" type="text/javascript"></script>
     <script src="js/script.js"></script>
-  </head>
-  <body>
-  <!-- navbar -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid first-row-wrap">
-      <div class="container first-row">
-        <div class="laptop-logo hidden-md hidden-lg">
-          <a href="#"><img src="img/logo-small.png"></a>
-        </div>
-        <ul class="top-menu">
-          <li><a href="#">Главная</a></li>
-          <li><a href="#">Новости</a></li>
-          <li><a href="#">О компании</a></li>
-          <li><a href="#">Обратная связь</a></li>
-        </ul>
-        <div class="phone">
-          <a href="tel:+380577326502">+38 (057) 732-65-02</a>
-        </div>
-        <div class="cabinet">
-          <a href="#">Личный кабинет</a>
-        </div>
-        <div class="language">
-          <form>
-            <select>
-              <option>RU</option>
-              <option>UA</option>
-              <option>EN</option>
-            </select>
-          </form>
-        </div>
-        <button id="sandwich-laptop" class="sandwich-laptop hidden-md hidden-lg" type="button"></button>
-      </div>
-    </div>
-    <div class="container-fluid second-row-wrap second-row-wrap-inner">
-      <div class="container second-row">
-        <div class="logo-top-big hidden-sm hidden-xs">
-          <a href="#"><img src="img/logo-big.png"></a>
-        </div>
-        <ul class="top-menu-second">
-          <li><a href="#">расписание</a></li>
-          <li><a href="#">поиск рейсов</a></li>
-          <li><a href="#">для пассажиров</a></li>
-          <li><a href="#">автостанции</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container-fluid third-row-wrap">
-      <div class="container third-row-inner">
-        <div class="logo-top-small">
-          <a href="#"><img src="img/logo-small.png"></a>
-        </div>
-        <form class="bus-search">
-          <div class="form-group stations">
-            <div class="station-item">
-              <select class="station station-from" multiple tabindex="-1">
-                <option>Киев, Украина</option>
-                <option>Ужгород, Украина</option>
-                <option>Харьков, Украина</option>
-              </select>
-            </div>
-            <button class="reverse"></button>
-            <div class="station-item">
-              <select class="station station-till" multiple tabindex="-1">
-                <option>Киев, Украина</option>
-                <option>Харьков, Украина</option>
-                <option>Ужгород, Украина</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-              <input class="date-add" type="text" value="" placeholder="Дата">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-            </div>
-          </div>
-          <div class="form-group passenger-wrap">
-            <select class="passenger">
-                <option>1 пассажир</option>
-                <option>2 пассажира</option>
-              </select>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-green search">Найти</button>
-          </div>
-        </form>
-        <button id="sandwich" class="sandwich" type="button"></button>
-      </div>
-    </div>
-  </nav>
-  <!-- menu lining -->
-  <div class="container-fluid menu-lining"></div>
-  <!-- Inner search -->
-  <div class="container-fluid inner-body-search">
-    <!-- status bar -->
-    <div class="container-fluid status-bar">
-      <div class="status">
-        <div class="status-line"></div>
-      </div>
-    </div>
-    <table class="container search-caption">
-      <tbody>
-        <tr>
-          <td><a href="#">Отправление</a></td>
-          <td><a href="#">Прибытие</a></td>
-          <td><a href="#">В пути</a></td>
-          <td><a href="#">Цена</a></td>
-        </tr>
-      </tbody>
-    </table>
-    <!-- For Desktop and Laptop -->
-    <table class="container search-item search-item-action">
-      <thead>
-        <tr>
-          <th>0544</th>
-          <th colspan="3"><span>Киев</span> &rarr; <span>Одесса</span></th>
-          <th>Автобус <span>Mercedes</span></th>
-          <th>Перевозчик <span>ТрансBUS</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="time-search">17:10</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
-          <td>
-            <div class="time-search">20:50</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>"МакДональдс", площадь Привокзальна 1А</td>
-          <td>
-            <div class="time-trip">5 ч. 50 м.</div>
-            <div class="type-run">прямой рейс</div>
-          </td>
-          <td>
-            <button class="btn btn-red">550 грн</button>
-            <p class="discount">-10%</p>
-            <p class="old-price">666 грн</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="container search-item search-item-optimal">
-      <thead>
-        <tr>
-          <th>0544</th>
-          <th colspan="3"><span>Киев</span> &rarr; <span>Одесса</span></th>
-          <th>Автобус <span>Mercedes</span></th>
-          <th>Перевозчик <span>ТрансBUS</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="time-search">17:10</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
-          <td>
-            <div class="time-search">20:50</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>"МакДональдс", площадь Привокзальна 1А</td>
-          <td>
-            <div class="time-trip">5 ч. 50 м.</div>
-            <div class="type-run">прямой рейс</div>
-          </td>
-          <td><button class="btn btn-green">550 грн</button></td>
-        </tr>
-      </tbody>
-    </table>    
-    <table class="container search-item">
-      <thead>
-        <tr>
-          <th>0544</th>
-          <th colspan="3"><span>Киев</span> &rarr; <span>Одесса</span></th>
-          <th>Автобус <span>Mercedes</span></th>
-          <th>Перевозчик <span>ТрансBUS</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="time-search">17:10</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
-          <td>
-            <div class="time-search">20:50</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>"МакДональдс", площадь Привокзальна 1А</td>
-          <td>
-            <div class="time-trip">5 ч. 50 м.</div>
-            <div class="type-run">прямой рейс</div>
-          </td>
-          <td><button class="btn btn-blue">550 грн</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="container search-item">
-      <thead>
-        <tr>
-          <th>0544</th>
-          <th colspan="3"><span>Киев</span> &rarr; <span>Одесса</span></th>
-          <th>Автобус <span>Mercedes</span></th>
-          <th>Перевозчик <span>ТрансBUS</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="time-search">17:10</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
-          <td>
-            <div class="time-search">20:50</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>"МакДональдс", площадь Привокзальна 1А</td>
-          <td>
-            <div class="time-trip">5 ч. 50 м.</div>
-            <div class="type-run">прямой рейс</div>
-          </td>
-          <td><button class="btn btn-blue">550 грн</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="container search-item">
-      <thead>
-        <tr>
-          <th>0544</th>
-          <th colspan="3"><span>Киев</span> &rarr; <span>Одесса</span></th>
-          <th>Автобус <span>Mercedes</span></th>
-          <th>Перевозчик <span>ТрансBUS</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="time-search">17:10</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
-          <td>
-            <div class="time-search">20:50</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>"МакДональдс", площадь Привокзальна 1А</td>
-          <td>
-            <div class="time-trip">5 ч. 50 м.</div>
-            <div class="type-run">прямой рейс</div>
-          </td>
-          <td><button class="btn btn-blue">550 грн</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="container search-item">
-      <thead>
-        <tr>
-          <th>0544</th>
-          <th colspan="3"><span>Киев</span> &rarr; <span>Одесса</span></th>
-          <th>Автобус <span>Mercedes</span></th>
-          <th>Перевозчик <span>ТрансBUS</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="time-search">17:10</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
-          <td>
-            <div class="time-search">20:50</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>"МакДональдс", площадь Привокзальна 1А</td>
-          <td>
-            <div class="time-trip">5 ч. 50 м.</div>
-            <div class="type-run">прямой рейс</div>
-          </td>
-          <td><button class="btn btn-blue">550 грн</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="container search-item">
-      <thead>
-        <tr>
-          <th>0544</th>
-          <th colspan="3"><span>Киев</span> &rarr; <span>Одесса</span></th>
-          <th>Автобус <span>Mercedes</span></th>
-          <th>Перевозчик <span>ТрансBUS</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="time-search">17:10</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
-          <td>
-            <div class="time-search">20:50</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td>"МакДональдс", площадь Привокзальна 1А</td>
-          <td>
-            <div class="time-trip">5 ч. 50 м.</div>
-            <div class="type-run">прямой рейс</div>
-          </td>
-          <td><button class="btn btn-blue">550 грн</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <!-- For Mobile -->
-    <table class="container search-item-mob search-item-mob-action">
-      <thead>
-        <tr>
-          <th>0544</th>
-          <th><span>Киев</span> &rarr; <span>Одесса</span></th>
-          <th><a href="#"><img src="img/search-more.png"></a></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="time-search">17:10</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td colspan="2">м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="time-search">20:50</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td colspan="2">"МакДональдс", площадь Привокзальна 1А</td>
-        </tr>
-        <tr>
-          <td colspan="3"><button class="btn btn-red">550 грн</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="container search-item-mob search-item-mob-optimal">
-      <thead>
-        <tr>
-          <th>0544</th>
-          <th><span>Киев</span> &rarr; <span>Одесса</span></th>
-          <th><a href="#"><img src="img/search-more.png"></a></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="time-search">17:10</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td colspan="2">м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="time-search">20:50</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td colspan="2">"МакДональдс", площадь Привокзальна 1А</td>
-        </tr>
-        <tr>
-          <td colspan="3"><button class="btn btn-green">550 грн</button></td>
-        </tr>
-      </tbody>
-    </table>    
-    <table class="container search-item-mob">
-      <thead>
-        <tr>
-          <th>0544</th>
-          <th><span>Киев</span> &rarr; <span>Одесса</span></th>
-          <th><a href="#"><img src="img/search-more.png"></a></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="time-search">17:10</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td colspan="2">м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="time-search">20:50</div>
-            <div class="date-search">31 августа</div>
-          </td>
-          <td colspan="2">"МакДональдс", площадь Привокзальна 1А</td>
-        </tr>
-        <tr>
-          <td colspan="3"><button class="btn btn-blue">550 грн</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+</head>
 
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid first-row-wrap">
+            <div class="container first-row">
+                <div class="laptop-logo hidden-md hidden-lg">
+                    <a href="#"><img src="img/logo-small.png"></a>
+                </div>
+                <ul class="top-menu">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Новости</a></li>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Обратная связь</a></li>
+                </ul>
+                <div class="phone">
+                    <a href="tel:+380577326502">+38 (057) 732-65-02</a>
+                </div>
+                <div class="cabinet">
+                    <a href="#">Личный кабинет</a>
+                </div>
+                <div class="language">
+                    <form>
+                        <select>
+                            <option>RU</option>
+                            <option>UA</option>
+                            <option>EN</option>
+                        </select>
+                    </form>
+                </div>
+                <button id="sandwich-laptop" class="sandwich-laptop hidden-md hidden-lg" type="button"></button>
+            </div>
+        </div>
+        <div class="container-fluid second-row-wrap second-row-wrap-inner">
+            <div class="container second-row">
+                <div class="logo-top-big hidden-sm hidden-xs">
+                    <a href="#"><img src="img/logo-big.png"></a>
+                </div>
+                <ul class="top-menu-second">
+                    <li><a href="#">расписание</a></li>
+                    <li><a href="#">поиск рейсов</a></li>
+                    <li><a href="#">для пассажиров</a></li>
+                    <li><a href="#">автостанции</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid third-row-wrap">
+            <div class="container third-row-inner">
+                <div class="logo-top-small">
+                    <a href="#"><img src="img/logo-small.png"></a>
+                </div>
+                <form class="bus-search">
+                    <div class="form-group stations">
+                        <div class="station-item">
+                            <select class="station station-from" multiple tabindex="-1">
+                                <option>Киев, Украина</option>
+                                <option>Ужгород, Украина</option>
+                                <option>Харьков, Украина</option>
+                            </select>
+                        </div>
+                        <button class="reverse"></button>
+                        <div class="station-item">
+                            <select class="station station-till" multiple tabindex="-1">
+                                <option>Киев, Украина</option>
+                                <option>Харьков, Украина</option>
+                                <option>Ужгород, Украина</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                            <input class="date-add" type="text" value="" placeholder="Дата">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                    <div class="form-group passenger-wrap">
+                        <select class="passenger">
+                            <option>1 пассажир</option>
+                            <option>2 пассажира</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-green search">Найти</button>
+                    </div>
+                </form>
+                <button id="sandwich" class="sandwich" type="button"></button>
+            </div>
+        </div>
+    </nav>
+    <!-- menu lining -->
+    <div class="container-fluid menu-lining"></div>
+    <!-- Inner search -->
+    <div class="container-fluid inner-body-search">
+        <!-- status bar -->
+        <div class="container-fluid status-bar">
+            <div class="status">
+                <div class="status-line"></div>
+            </div>
+        </div>
+        <table class="container search-caption">
+            <tbody>
+                <tr>
+                    <td><a href="#">Отправление</a></td>
+                    <td><a href="#">Прибытие</a></td>
+                    <td><a href="#">В пути</a></td>
+                    <td><a href="#">Цена</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- For Desktop and Laptop -->
+        <div class="container search-item-wrap search-item-action">
+          <table class="container search-item">
+              <thead>
+                  <tr>
+                      <th>0544</th>
+                      <th colspan="3"><span>Киев</span> &rarr; <span>Одесса</span></th>
+                      <th>Автобус <span>Mercedes</span></th>
+                      <th>Перевозчик <span>ТрансBUS</span></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>
+                          <div class="time-search">17:10</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td>м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
+                      <td>
+                          <div class="time-search">20:50</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td>"МакДональдс", площадь Привокзальна 1А</td>
+                      <td>
+                          <div class="time-trip">5 ч. 50 м.</div>
+                          <div class="type-run">прямой рейс</div>
+                      </td>
+                      <td>
+                          <button class="btn btn-red">550 грн</button>
+                          <p class="discount">-10%</p>
+                          <p class="old-price">666 грн</p>
+                      </td>
+                  </tr>                
+              </tbody>
+          </table>
+          <div id="route1" class="collapse">
+          <table class="container search-item search-details">
+              <tbody>
+                  <tr>
+                    <td>Отправление</td>
+                    <td class="departure">22:45</td>
+                    <td>Киев<br>проспект Науки, 1/2 (ст.м. "Демеевская")</td>
+                    <td>Перевозчик: "Гюнсел" ООО<br> не предоставляет выбор мест на рейс</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="interim">23:15</td>
+                    <td>Борисполь (аэропорт)</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="interim">01:05</td>
+                    <td>Пирятин<br>вул. Червоноармійська, 154</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="interim">01:40</td>
+                    <td>Лубны<br>вул. Радянська, 157</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="interim">02:15</td>
+                    <td>Хорол</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Прибытие</td>
+                    <td class="arrival">03:45</td>
+                    <td>Полтава<br>ул. Великотирновская, 7</td>
+                    <td></td>
+                  </tr>
+              </tbody>
+          </table>
+          </div>
+          <table class="container search-item search-details-btn-wrap">
+            <tbody>
+              <tr>
+                <td colspan="8">
+                    <button class="search-details-btn" data-toggle="collapse" data-target="#route1">Подробнее</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="container search-item-wrap search-item-optimal">
+          <table class="container search-item">
+              <thead>
+                  <tr>
+                      <th>0544</th>
+                      <th colspan="3"><span>Киев</span> &rarr; <span>Одесса</span></th>
+                      <th>Автобус <span>Mercedes</span></th>
+                      <th>Перевозчик <span>ТрансBUS</span></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>
+                          <div class="time-search">17:10</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td>м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
+                      <td>
+                          <div class="time-search">20:50</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td>"МакДональдс", площадь Привокзальна 1А</td>
+                      <td>
+                          <div class="time-trip">5 ч. 50 м.</div>
+                          <div class="type-run">прямой рейс</div>
+                      </td>
+                      <td>
+                          <button class="btn btn-green">550 грн</button>
+                      </td>
+                  </tr>                
+              </tbody>
+          </table>
+          <div id="route2" class="collapse">
+            <table class="container search-item search-details">
+                <tbody>
+                    <tr>
+                      <td>Отправление</td>
+                      <td class="departure">22:45</td>
+                      <td>Киев<br>проспект Науки, 1/2 (ст.м. "Демеевская")</td>
+                      <td>Перевозчик: "Гюнсел" ООО<br> не предоставляет выбор мест на рейс</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td class="interim">23:15</td>
+                      <td>Борисполь (аэропорт)</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td class="interim">01:05</td>
+                      <td>Пирятин<br>вул. Червоноармійська, 154</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td class="interim">01:40</td>
+                      <td>Лубны<br>вул. Радянська, 157</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td class="interim">02:15</td>
+                      <td>Хорол</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Прибытие</td>
+                      <td class="arrival">03:45</td>
+                      <td>Полтава<br>ул. Великотирновская, 7</td>
+                      <td></td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+          <table class="container search-item search-details-btn-wrap">
+            <tbody>
+              <tr>
+                <td colspan="8">
+                    <button class="search-details-btn" data-toggle="collapse" data-target="#route2">Подробнее</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="container search-item-wrap search-item-normal">
+          <table class="container search-item">
+              <thead>
+                  <tr>
+                      <th>0544</th>
+                      <th colspan="3"><span>Киев</span> &rarr; <span>Одесса</span></th>
+                      <th>Автобус <span>Mercedes</span></th>
+                      <th>Перевозчик <span>ТрансBUS</span></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>
+                          <div class="time-search">17:10</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td>м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
+                      <td>
+                          <div class="time-search">20:50</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td>"МакДональдс", площадь Привокзальна 1А</td>
+                      <td>
+                          <div class="time-trip">5 ч. 50 м.</div>
+                          <div class="type-run">прямой рейс</div>
+                      </td>
+                      <td>
+                          <button class="btn btn-blue">550 грн</button>
+                      </td>
+                  </tr>                
+              </tbody>
+          </table>
+          <div id="route3" class="collapse">
+          <table class="container search-item search-details">
+              <tbody>
+                  <tr>
+                    <td>Отправление</td>
+                    <td class="departure">22:45</td>
+                    <td>Киев<br>проспект Науки, 1/2 (ст.м. "Демеевская")</td>
+                    <td>Перевозчик: "Гюнсел" ООО<br> не предоставляет выбор мест на рейс</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="interim">23:15</td>
+                    <td>Борисполь (аэропорт)</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="interim">01:05</td>
+                    <td>Пирятин<br>вул. Червоноармійська, 154</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="interim">01:40</td>
+                    <td>Лубны<br>вул. Радянська, 157</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="interim">02:15</td>
+                    <td>Хорол</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Прибытие</td>
+                    <td class="arrival">03:45</td>
+                    <td>Полтава<br>ул. Великотирновская, 7</td>
+                    <td></td>
+                  </tr>
+              </tbody>
+          </table>
+          </div>
+          <table class="container search-item search-details-btn-wrap">
+            <tbody>
+              <tr>
+                <td colspan="8">
+                    <button class="search-details-btn" data-toggle="collapse" data-target="#route3">Подробнее</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-  <!-- footer -->
-  <footer>
-    <div class="container-fluid footer-top-wrap">
-      <div class="container footer-top">
-        <div class="footer-top-logo">
-          <a href="#"><img src="img/logo-small.png"></a>
+        
+        <!-- For Mobile -->
+        <div class="container search-item-mob-wrap search-item-mob-action">
+          <table class="search-item-mob">
+              <thead>
+                  <tr>
+                      <th>0544</th>
+                      <th><span>Киев</span> &rarr; <span>Одесса</span></th>
+                      <th>
+                          <a data-toggle="collapse" data-target="#route-mob-1"><img src="img/search-more.png"></a>
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>
+                          <div class="time-search">17:10</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td colspan="2">м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class="time-search">20:50</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td colspan="2">"МакДональдс", площадь Привокзальна 1А</td>
+                  </tr>
+                  <tr>
+                      <td colspan="3">
+                          <button class="btn btn-red">550 грн</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+          <div id="route-mob-1" class="collapse">
+              <table class="container search-details search-details-mobile">
+                  <tbody>
+                      <tr>
+                        <td class="departure">22:45</td>
+                        <td>Киев<br>проспект Науки, 1/2 (ст.м. "Демеевская")</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">23:15</td>
+                        <td>Борисполь (аэропорт)</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">01:05</td>
+                        <td>Пирятин<br>вул. Червоноармійська, 154</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">01:40</td>
+                        <td>Лубны<br>вул. Радянська, 157</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">02:15</td>
+                        <td>Хорол</td>
+                      </tr>
+                      <tr>
+                        <td class="arrival">03:45</td>
+                        <td>Полтава<br>ул. Великотирновская, 7</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
         </div>
-        <ul class="footer-top-ul">
-          <li><a href="#">расписание</a></li>
-          <li><a href="#">поиск рейсов</a></li>
-          <li><a href="#">для пассажиров</a></li>
-          <li><a href="#">автостанции</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container-fluid footer-bottom-wrap">
-      <div class="container footer-bottom">
-        <div class="footer-bottom-menu">
-          <div class="footer-bottom-item">
-            <ul>
-              <li><a href="#">Главная</a></li>
-              <li><a href="#">Новости</a></li>
-              <li><a href="#">О компании</a></li>
-              <li><a href="#">Обратная связь</a></li>
-            </ul>
-          </div>
-          <div class="footer-bottom-item footer-bottom-item-2">
-            <ul>
-              <li><a href="#">Внутренние рейсы</a></li>
-              <li><a href="#">Международные рейсы</a></li>
-            </ul>
-          </div>
-          <div class="footer-bottom-item footer-bottom-item-3">
-            <ul>
-              <li><a href="#">Служба поддержки</a></li>
-              <li><a href="#">Личный кабинет</a></li>
-            </ul>
-          </div>
-          <div class="footer-bottom-item footer-bottom-item-4">
-            <ul>
-              <li><a href="#">Вопросы и ответы</a></li>
-              <li><a href="#">Услуги пассажирам</a></li>
-              <li><a href="#">Законы и правила</a></li>
-            </ul>
-          </div>
-          <div class="footer-bottom-item">
-            <p class="footer-caption">Центральний автовокзал</p>
-            <p>пр. Гагаріна, 22 </p>
-            <p>тел. (+38-057)732-65-02</p>
-            <p>E-mail: <a href="mailto:mk@bus.kharkov.ua">mk@bus.kharkov.ua</a></p>
+        <div class="container search-item-mob-wrap search-item-mob-optimal">
+          <table class="search-item-mob">
+              <thead>
+                  <tr>
+                      <th>0544</th>
+                      <th><span>Киев</span> &rarr; <span>Одесса</span></th>
+                      <th>
+                          <a data-toggle="collapse" data-target="#route-mob-2"><img src="img/search-more.png"></a>
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>
+                          <div class="time-search">17:10</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td colspan="2">м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class="time-search">20:50</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td colspan="2">"МакДональдс", площадь Привокзальна 1А</td>
+                  </tr>
+                  <tr>
+                      <td colspan="3">
+                          <button class="btn btn-green">550 грн</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+          <div id="route-mob-2" class="collapse">
+              <table class="container search-details search-details-mobile">
+                  <tbody>
+                      <tr>
+                        <td class="departure">22:45</td>
+                        <td>Киев<br>проспект Науки, 1/2 (ст.м. "Демеевская")</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">23:15</td>
+                        <td>Борисполь (аэропорт)</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">01:05</td>
+                        <td>Пирятин<br>вул. Червоноармійська, 154</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">01:40</td>
+                        <td>Лубны<br>вул. Радянська, 157</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">02:15</td>
+                        <td>Хорол</td>
+                      </tr>
+                      <tr>
+                        <td class="arrival">03:45</td>
+                        <td>Полтава<br>ул. Великотирновская, 7</td>
+                      </tr>
+                  </tbody>
+              </table>
           </div>
         </div>
-        <div class="counters">
-          <div class="counters-item">
-            <img src="img/counter.png">
+        <div class="container search-item-mob-wrap search-item-mob-normal">
+          <table class="search-item-mob">
+              <thead>
+                  <tr>
+                      <th>0544</th>
+                      <th><span>Киев</span> &rarr; <span>Одесса</span></th>
+                      <th>
+                          <a data-toggle="collapse" data-target="#route-mob-3"><img src="img/search-more.png"></a>
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>
+                          <div class="time-search">17:10</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td colspan="2">м.Вокзальная АС Киев, ниже ЦЖД, справа от шлагбаума на выезде</td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class="time-search">20:50</div>
+                          <div class="date-search">31 августа</div>
+                      </td>
+                      <td colspan="2">"МакДональдс", площадь Привокзальна 1А</td>
+                  </tr>
+                  <tr>
+                      <td colspan="3">
+                          <button class="btn btn-blue">550 грн</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+          <div id="route-mob-3" class="collapse">
+              <table class="container search-details search-details-mobile">
+                  <tbody>
+                      <tr>
+                        <td class="departure">22:45</td>
+                        <td>Киев<br>проспект Науки, 1/2 (ст.м. "Демеевская")</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">23:15</td>
+                        <td>Борисполь (аэропорт)</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">01:05</td>
+                        <td>Пирятин<br>вул. Червоноармійська, 154</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">01:40</td>
+                        <td>Лубны<br>вул. Радянська, 157</td>
+                      </tr>
+                      <tr>
+                        <td class="interim">02:15</td>
+                        <td>Хорол</td>
+                      </tr>
+                      <tr>
+                        <td class="arrival">03:45</td>
+                        <td>Полтава<br>ул. Великотирновская, 7</td>
+                      </tr>
+                  </tbody>
+              </table>
           </div>
-          <div class="counters-item">
-            <a href="#">Разработка сайта</a>
-          </div>
+        </div>        
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="container-fluid footer-top-wrap">
+            <div class="container footer-top">
+                <div class="footer-top-logo">
+                    <a href="#"><img src="img/logo-small.png"></a>
+                </div>
+                <ul class="footer-top-ul">
+                    <li><a href="#">расписание</a></li>
+                    <li><a href="#">поиск рейсов</a></li>
+                    <li><a href="#">для пассажиров</a></li>
+                    <li><a href="#">автостанции</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="container-fluid copyright">
-      <div class="container copyright-inner">
-        <p>Copyright © 2006 - 2016 "ПАО Харьковское предприятие автобусных станций". Использование материалов разрешается только с гиперссылкой на сайт <a href="http://www.bus.kharkov.ua">bus.kharkov.ua</a>!  </p>
-      </div>
-    </div>
-  </footer>
-
-    
-    
-  </body>
+        <div class="container-fluid footer-bottom-wrap">
+            <div class="container footer-bottom">
+                <div class="footer-bottom-menu">
+                    <div class="footer-bottom-item">
+                        <ul>
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">Новости</a></li>
+                            <li><a href="#">О компании</a></li>
+                            <li><a href="#">Обратная связь</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-bottom-item footer-bottom-item-2">
+                        <ul>
+                            <li><a href="#">Внутренние рейсы</a></li>
+                            <li><a href="#">Международные рейсы</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-bottom-item footer-bottom-item-3">
+                        <ul>
+                            <li><a href="#">Служба поддержки</a></li>
+                            <li><a href="#">Личный кабинет</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-bottom-item footer-bottom-item-4">
+                        <ul>
+                            <li><a href="#">Вопросы и ответы</a></li>
+                            <li><a href="#">Услуги пассажирам</a></li>
+                            <li><a href="#">Законы и правила</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-bottom-item">
+                        <p class="footer-caption">Центральний автовокзал</p>
+                        <p>пр. Гагаріна, 22 </p>
+                        <p>тел. (+38-057)732-65-02</p>
+                        <p>E-mail: <a href="mailto:mk@bus.kharkov.ua">mk@bus.kharkov.ua</a></p>
+                    </div>
+                </div>
+                <div class="counters">
+                    <div class="counters-item">
+                        <img src="img/counter.png">
+                    </div>
+                    <div class="counters-item">
+                        <a href="#">Разработка сайта</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container copyright-inner">
+                <p>Copyright © 2006 - 2016 "ПАО Харьковское предприятие автобусных станций". Использование материалов разрешается только с гиперссылкой на сайт <a href="http://www.bus.kharkov.ua">bus.kharkov.ua</a>! </p>
+            </div>
+        </div>
+    </footer>
+</body>

@@ -358,10 +358,13 @@ input[type="text"], input[type="number"], input[type="email"] {
     line-height: 24px;
 }
 
+.date-wrap {
+	width: 135px;
+}
+
 .date {
-	width: 125px !important;
-	max-width: 125px !important;
-	margin-left: 6px;
+	width: 100% !important;
+	max-width: 100% !important;
 }
 
 .date-add {
@@ -487,7 +490,9 @@ input[type="text"], input[type="number"], input[type="email"] {
 	border-top: 6px solid #09c;
 	border-bottom: 0;
 }
-
+.passenger-wrap {
+	width: 135px;
+}
 .passenger {
 	border: 1px solid #e5e5e5;
 	border-radius: 6px;
@@ -496,7 +501,7 @@ input[type="text"], input[type="number"], input[type="email"] {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    width: 136px;
+    width: 100%;
     height: 50px;
 }
 
@@ -1089,7 +1094,113 @@ input[type="text"], input[type="number"], input[type="email"] {
 		}
 	}
 }
+.enter {
+	z-index: 1150;
+	&-content {
+		border-radius: 0;
+		max-width: 690px;
+	}
+	&-header {
+		border-bottom: 0;
+		text-align: center;		
+	}
+	&-close {
+		width: 27px;
+		height: 27px;
+		background: url('../img/modal-close.png') center no-repeat !important;
+		opacity: 1;
+		margin-top: -50px !important;
+		margin-right: -15px;
 
+	}
+	&-title {
+		color: #282f39;
+		font-family: "ArialBold";
+		font-size: 18px;
+		text-transform: uppercase;
+		padding-top: 50px;
+		padding-bottom: 10px;
+	}
+	&-body {
+		padding: 15px 60px 90px;
+		form {
+			.form-group {
+				margin-bottom: 25px;
+				input[type="text"],
+				input[type="email"] {
+					width: 100%;
+					height: 45px;
+
+				}
+				input[type="checkbox"] {
+					width: 150px;
+					height: 24px;
+					position: relative;
+					z-index: 1000;
+					left: 0px;
+					bottom: 0px;
+					opacity: 0;
+					cursor: pointer;
+				}
+				label {
+				    font-size: 14px;
+				    position: relative;
+				    left: -150px;
+				    font-weight: normal;
+				}
+				input[type="checkbox"] + label span {
+				    display: inline-block;
+				    width: 13px;
+				    height: 13px;
+				    background: url("../img/checkbox-sprite.png");
+				    background-position: 0 -13px;
+				    margin-right: 10px;
+				    top: 1px;
+				    position: relative;
+				    pointer-events: none;
+				}
+				input[type="checkbox"]:checked + label span {
+				   background-position: -13px 0;    
+				}			
+			}
+		}
+	}
+	&-btn {
+		width: 100%;
+		height: 45px;
+		background: url('../img/bus-white.png') 40% center no-repeat;
+		margin-bottom: 20px;
+	}
+}
+.other-modals-link {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 60px;
+	a {
+		color: #0c78be;
+		font-size: 14px;
+		font-weight: 400;
+	}
+}
+.socials {
+	.btn {
+		width: 100%;
+		height: 45px;
+		border-radius: 6px;
+		color: white;
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+	.btn-facebook {
+		box-shadow: inset 0px -3px 1px #2e3192;
+		background-color: #405d9b;
+	}
+	.btn-google {
+		box-shadow: inset 0px -3px 1px #9e0b0f;
+		background-color: #d73d32;
+	}
+}
 /* Inners */
 .menu-lining {
 	background-image: url('../img/slide-01.png');
@@ -1163,16 +1274,17 @@ input[type="text"], input[type="number"], input[type="email"] {
 		}
 	}
 }
-.search-item-mob {
+.search-item-mob-wrap {
 	display: none;
 }
 
+.search-item-wrap {
+	margin-bottom: 25px;
+}
 .search-item {
-	border-left: 4px solid #09c;
 	border-top: 1px solid #e5e5e5;
 	border-right: 1px solid #e5e5e5;
 	background-color: #fff;
-	margin-bottom: 25px;
 	thead {
 		tr {
 			border-bottom: 1px solid #e5e5e5;
@@ -1208,16 +1320,16 @@ input[type="text"], input[type="number"], input[type="email"] {
 	}
 	tbody {		
 		tr {
-			border-bottom: 1px solid #e5e5e5;
 			td {
 				font-size: 13px;
 				font-weight: 400;
 				color: black;
 				line-height: 24px;
-				padding: 30px 20px;
+				padding: 30px 20px 10px;
 				.time-search {
 					font-size: 26px;
 					margin-bottom: 15px;
+					text-align: left;
 				}
 				.date-search {
 					color: #666;
@@ -1264,6 +1376,81 @@ input[type="text"], input[type="number"], input[type="email"] {
 			}
 		}
 	}
+}
+.search-details {
+	border-top: 0;
+	background: url('../img/dashed-vertical.png') 169px center repeat-y;
+	tbody {
+		tr {
+			td {
+				vertical-align: top;
+				padding: 10px 20px;
+			}
+			td:nth-child(1),
+			td:nth-child(4) {
+			    color: #666;
+				font-size: 16px;
+				text-align: left;
+			}
+			td:nth-child(2) {
+				color: #000000;
+				font-size: 15px;
+				font-family: "ArialBold";
+				padding: 10px 20px 10px 45px;			
+			}
+			td:nth-child(2).departure {
+				background: url('../img/details-departure.png') 3px -22px no-repeat; 
+			}
+			td:nth-child(2).interim {
+				background: url('../img/ellipse-grey.png') 4px 17px no-repeat; 
+			}
+			td:nth-child(2).arrival {
+				background: url('../img/details-arrival.png') 3px 16px no-repeat; 
+			}
+			td:nth-child(3) {
+				font-size: 15px;
+				color: #333333;
+				text-align: left;
+				padding: 10px 20px 10px 0px;
+			}			
+		}
+		tr:nth-child(1) {
+			td:nth-child(4) {
+				background: url('../img/info.png') left 15px no-repeat;
+				max-width: 270px;
+			}
+		}
+	}
+}
+.search-details-btn-wrap {
+	border-top: 0;
+	tbody {
+		tr {
+			border-bottom: 1px solid #e5e5e5;
+			td {
+				padding: 0;
+				.search-details-btn {
+					color: #0099cc;
+					font-size: 13px;
+					background: url('../img/arrow-down-grey.png') left center no-repeat;
+					padding-left: 30px;
+					border: 0;
+					outline: none;
+				}
+				.search-details-btn-hide {
+					color: transparent;
+					background: url('../img/arrow-up-grey.png') center no-repeat;
+					padding-left: 0px;
+					border: 0;
+					outline: none;
+				}
+			}
+		}
+	}	
+}
+
+.search-item-normal {	
+	border-left: 4px solid #09c;
 }
 
 .search-item-optimal {
@@ -1818,6 +2005,23 @@ input[type="text"], input[type="number"], input[type="email"] {
 	.order-map-3 {
 		margin-top: 82px;
 	}
+	.amount-seats {
+		background: #fff;
+		border: 1px solid #ccc;
+		padding: 20px;
+		max-width: 460px;
+		p {
+			font-size: 15px;
+		}
+		input[type="text"] {
+			margin-top: 10px;
+		}
+		p.booked {
+			font-size: 20px;
+			color: #666666;
+			margin-top: 30px;
+		}
+	}
 }
 .order-body-step-four {
 	flex-flow: column nowrap;
@@ -2350,6 +2554,99 @@ input[type="text"], input[type="number"], input[type="email"] {
 			color: white;
 		}
 	}
+}
+
+/* Account */
+.table-account {
+	thead {
+		tr {						
+			background-color: #333;						
+			th {
+			    background-position: 24px center;
+			    background-repeat: no-repeat;
+			    height: 40px;
+			    a {
+			    	color: white;
+			    	font-size: 13px;
+			    	font-weight: 400;
+			    	line-height: 24px;
+			    	padding-left: 20px;
+			    }
+			}
+		}
+	}
+	tbody {
+		tr {
+			border: 1px solid #e5e5e5;
+			background-color: #fff;
+			td {				
+				color: black;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 20px;
+				padding: 20px;
+				min-height: 60px;
+				text-align: left;
+				vertical-align: top;
+				.trip-btn {
+					width: 120px;
+					height: 40px;
+					font-size: 16px;
+				}
+				.trip-number {
+					margin-top: 10px;
+					color: #666;
+					font-size: 14px;
+					line-height: 17px;
+					span {
+						color: black;
+						font-size: 16px;
+					}
+				}
+				.trip-note {
+					margin-top: 10px;
+					color: #282f39;
+					font-size: 13px;
+					line-height: 15px;
+				}
+				.trip-info {
+					margin-top: 10px;
+					font-size: 13px;
+					line-height: 15px;
+					color: #666;
+					span {
+						color: black;
+					}
+				}
+			}
+			td:nth-child(1) a {
+				background: url('../img/invoice.png') left center no-repeat;
+				color: #0099cc;
+				font-size: 16px;
+				text-decoration: underline;
+				padding-left: 25px;
+			}
+			td:nth-child(2) {
+				min-width: 210px;
+			}
+			td:nth-child(6) {
+				max-width: 160px;
+				text-align: center;
+				.decline {
+					color: #0099cc;
+					background: transparent;
+					font-size: 13px;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+.trip-table-bus-mobile {
+	display: none;
+}
+.table-account-mobile {
+	display: none;
 }
 
 
